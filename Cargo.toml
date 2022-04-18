@@ -1,8 +1,6 @@
 [workspace]
 members = [
     "libraries/*",
+    "apps/*",
 ]
 resolver = "2"
-
-[profile.dev.package.bevy]
-opt-level = 3
