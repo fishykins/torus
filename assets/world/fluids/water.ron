@@ -1,0 +1,11 @@
+Fluid(
+    flow_rate: 1.0,
+    density: 1.0,
+    thermo_state: (
+        melting: 0.0,
+        boiling: 100.0,
+    ),
+    attributes: {
+        ThermalConductor: 1.0,
+    }
+)

@@ -1,0 +1,62 @@
+(
+    paths: [
+        (
+            a: 0,
+            b: 1,
+            flags: [],
+        ),
+        (
+            a: 1,
+            b: 2,
+            flags: [],
+        ),
+        (
+            a: 2,
+            b: 3,
+            flags: [],
+        )
+
+    ],
+    junctions: [
+        (
+            position: (x: 64, y: 0),
+            shape: Default,
+            style: Normal,
+            flags: [],
+        ),
+        (
+            position: (x: 64, y: 64),
+            shape: Default,
+            style: Normal,
+            flags: [],
+        ),
+        (
+            position: (x: 128, y: 64),
+            shape: Default,
+            style: Normal,
+            flags: [],
+        ),
+        (
+            position: (x: 128, y: 128),
+            shape: Default,
+            style: Normal,
+            flags: [],
+        ),
+    ],
+    regions: [
+        (
+            bounds: (
+                min: (x: 0, y: 65),
+                max: (x: 80, y: 80),
+            ),
+            flags: [],
+        ),
+    ],
+    portals: [
+        (
+            a: Junction(1),
+            b: Region(0),
+            flags: [],
+        )
+    ],
+)

@@ -1,0 +1,2 @@
+//! Meta data associated with world item types, peoples, and other things. Treat this as a library of all the things you can find in the game/universe.
+//! Where possible, types are kept agnostic in favour of config files being used to define specific things.

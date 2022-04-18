@@ -1,0 +1,9 @@
+[package]
+name = "torus_meta"
+version = "0.1.0"
+authors = ["Caspar Green <caspar.m.green@gmail.com>"]
+edition = "2021"
+
+[dependencies]
+ron = "0.7"
+serde = "1.0"

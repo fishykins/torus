@@ -1,0 +1,10 @@
+target
+depreciated
+
+# VSCode
+.vscode/
+/.vscode/*
+!/.vscode/launch.json
+*.code-workspace
+
+Cargo.lock
