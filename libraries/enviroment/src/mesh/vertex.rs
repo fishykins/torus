@@ -1,5 +1,5 @@
-use prima::Point2;
+use prima::Point;
 
 pub struct Vertex {
-    pub position: Point2<f32>,
+    pub position: Point<f32>,
 }
