@@ -95,14 +95,26 @@ fn setup(mut commands: Commands) {
     spawn_cube(
         &mut commands,
         Point::new(5.0, 0.0),
-        Color::rgb(0.5, 0.5, 0.4),
+        Color::rgb(0.5, 0.3, 0.4),
         4.0,
     );
     spawn_cube(
         &mut commands,
         Point::new(-5.0, 0.0),
-        Color::rgb(0.24, 0.5, 0.1),
+        Color::rgb(0.24, 0.6, 0.1),
         2.0,
+    );
+    spawn_cube(
+        &mut commands,
+        Point::new(-12.0, -10.0),
+        Color::rgb(0.7, 0.2, 0.2),
+        5.0,
+    );
+    spawn_cube(
+        &mut commands,
+        Point::new(12.0, -10.0),
+        Color::rgb(0.1, 0.2, 0.7),
+        3.0,
     );
 }
 
