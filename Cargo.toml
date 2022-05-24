@@ -2,5 +2,6 @@
 members = [
     "libraries/*",
     "apps/*",
+    "tools/*",
 ]
 resolver = "2"

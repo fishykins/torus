@@ -1,4 +1,4 @@
-use prima::Aabr;
+use prima::prelude::*;
 use serde::Deserialize;
 
 use crate::DefaultInt;

@@ -1,9 +1,9 @@
 use crate::{DefaultInt, DefaultIx};
-use prima::Point;
+use prima::prelude::*;
 use serde::Deserialize;
 
 /// Node point with a position and connections.
-#[derive(Debug, Deserialize, Default, PartialEq, Clone, Hash)]
+#[derive(Debug, Deserialize, Default, PartialEq, Clone)]
 pub struct Junction {
     pub position: Point<DefaultInt>,
     pub shape: JunctionShape,

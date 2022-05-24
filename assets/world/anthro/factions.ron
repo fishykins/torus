@@ -1,0 +1,270 @@
+[
+    (
+        uid: 1,
+        long_name: "Rusty Systems",
+        short_name: "Rusty",
+        abrv: "RS",
+        desription: "Manufacturer of civilian shuttles and industrial mining equiptment.",
+        type: Corporation,
+        tags: [
+            Manufacturing,
+            Industrial,
+            Mining,
+            Civilian,
+        ]
+    ),
+    (
+        uid: 2,
+        long_name: "Nax Foundries",
+        short_name: "Nax",
+        abrv: "NF",
+        desription: "Primary manufacturer of gass projected weapons, predominantly for military use.",
+        type: Corporation,
+        tags: [
+            Manufacturing,
+            Military,
+            Weapons,
+        ]
+    ),
+    (
+        uid: 3,
+        long_name: "Poppa Industries",
+        short_name: "Poppa",
+        abrv: "PP",
+        desription: "Manufacturer of ammunition and explosives.",
+        type: Corporation,
+        tags: [
+            Manufacturing,
+            Ammunition,
+            Explosives,
+        ]
+    ),
+    (
+        uid: 4,
+        long_name: "Izao Logistics",
+        short_name: "Izao",
+        abrv: "IZ",
+        desription: "Large scale supplier of tools and civilian equiptment.",
+        type: Corporation,
+        tags: [
+            Manufacturing,
+            Civilian,
+            Tools,
+            Electronics,
+        ]
+    ),
+    (
+        uid: 5,
+        long_name: "Christal Dynamics",
+        short_name: "Chris",
+        abrv: "CD",
+        desription: "Manufacturer of composite materials and shield systems.",
+        type: Corporation,
+        tags: [
+            Manufacturing,
+            Materials,
+            Shields,
+            Electronics,
+            Armour,
+        ]
+    ),
+    (
+        uid: 6, 
+        long_name: "Marley Manufacturing",
+        short_name: "Marley",
+        abrv: "MM",
+        desription: "Manufacturer of laser based weapons, primarily for military use.",
+        type: Corporation,
+        tags: [
+            Manufacturing,
+            Military,
+            Mining,
+            Weapons,
+        ]
+    ),
+    (
+        uid: 7,
+        long_name: "Alphawave",
+        short_name: "Alphawave",
+        abrv: "AW",
+        desription: "Medical equipment.",
+        type: Corporation,
+        tags: [
+            Manufacturing,
+            Medical,
+            Biological,
+            Electronics,
+            Armour,
+        ]
+    ),
+    (
+        uid: 8,
+        long_name: "Fox Industries",
+        short_name: "Fox",
+        abrv: "FI",
+        desription: "Medical and logistical supplies.",
+        type: Corporation,
+        tags: [
+            Research,
+            Medical,
+            Logistics,
+            Tools,
+        ]
+    ),
+    (
+        uid: 9,
+        long_name: "Zinka Solutions",
+        short_name: "Zinka",
+        abrv: "ZK",
+        desription: "Production of small arms, primarily for military use.",
+        type: Corporation,
+        tags: [
+            Manufacturing,
+            Military,
+            Weapons,
+            Armour,
+        ]
+    ),
+    (
+        uid: 10,
+        long_name: "Davos Zentro",
+        short_name: "Davos",
+        abrv: "DZ",
+        desription: "Manufacturer of heavy weapons and explision systems.",
+        type: Corporation,
+        tags: [
+            Manufacturing,
+            Military,
+            Weapons,
+            Explosives,
+        ]
+    ),
+    (
+        uid: 11,
+        long_name: "Andromeda Spaceways",
+        short_name: "Andromeda",
+        abrv: "AS",
+        desription: "Manufacturer of small arms. Favours energy weapons.",
+        type: Corporation,
+        tags: [
+            Manufacturing,
+            Ammunition,
+            Weapons,
+            Electronics,
+        ]
+    ),
+    (
+        uid: 12,
+        long_name: "Nova Corporation",
+        short_name: "Nova",
+        abrv: "NC",
+        desription: "Manufacturer of rugged and durable military hardware.",
+        type: Corporation,
+        tags: [
+            Manufacturing,
+            Military,
+            Weapons,
+            Medical,
+        ]
+    ),
+    (
+        uid: 13,
+        long_name: "Primitive Skies",
+        short_name: "Primitive",
+        abrv: "PS",
+        desription: "Chemical and biological researcher.",
+        type: Corporation,
+        tags: [
+            Research,
+            Biological,
+            Medical,
+            Explosives,
+        ]
+    ),
+    (
+        uid:14,
+        long_name: "Galactic Naval Systems",
+        short_name: "GNS",
+        abrv: "GNS",
+        desription: "Manufacturer of military ships and equipment.",
+        type: Corporation,
+        tags: [
+            Manufacturing,
+            Military,
+            Ships,
+            Weapons,
+        ]
+    ),
+    (
+        uid: 15,
+        long_name: "Chet Industries",
+        short_name: "Chet",
+        abrv: "CI",
+        desription: "Shipmakers and advanced propulsion systems.",
+        type: Corporation,
+        tags: [
+            Manufacturing,
+            Ships,
+            Electronics,
+            Armour,
+        ]
+    ),
+    (
+        uid: 16, 
+        long_name: "Soquin Peaks",
+        short_name: "Soquin",
+        abrv: "SP",
+        desription: "Manufacturer of lightweight alloys and advanced electronics.",
+        type: Corporation,
+        tags: [
+            Manufacturing,
+            Electronics,
+            Armour,
+            Materials,
+        ]
+    ),
+    (
+        uid: 17,
+        long_name: "Minatour Arms",
+        short_name: "Minatour",
+        abrv: "MA",
+        desription: "Manufacturer of military and experimental weapons.",
+        type: Corporation,
+        tags: [
+            Manufacturing,
+            Military,
+            Weapons,
+            Explosives,
+            Chemical,
+            Research,
+        ]
+    ),
+    (
+        uid: 18,
+        long_name: "Moonbark Skies",
+        short_name: "Moonbark",
+        abrv: "MS",
+        desription: "Shipwright and advanced weapon systems.",
+        type: Corporation,
+        tags: [
+            Manufacturing,
+            Ships,
+            Electronics,
+            Weapons,
+        ]
+    ),
+    (
+        uid: 19,
+        long_name: "Tarin Yards",
+        short_name: "Tarin",
+        abrv: "TY",
+        desription: "Producer of capitol ships and large-scale vessels.",
+        type: Corporation,
+        tags: [
+            Manufacturing,
+            Ships,
+            Weapons,
+            Medical,
+        ]
+    )
+]

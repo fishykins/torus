@@ -1,0 +1,12 @@
+[
+    (
+        // NF-12
+        nickname: "Beamer",
+        maker: 2, // Nax foundries
+        model: 12,
+        variant: None,
+        class: Assault,
+        propulsion: Powder,
+        desription: "An antique rifle that has formed the backbone of military opperations for the past century."
+    )
+]
