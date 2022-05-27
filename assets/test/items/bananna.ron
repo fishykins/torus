@@ -1,0 +1,13 @@
+Item(
+    uid: 1,
+    descriptor: (
+        title_long: "Bananna",
+        title_short: "Bananna",
+        description: "A yellow fruit",
+        abbreviation: "",
+    ),
+    tags: [
+        Consumable,
+        Rare,
+    ],
+)

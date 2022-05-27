@@ -1,9 +1,7 @@
 use std::hash::Hash;
-
-use bevy::reflect::TypeUuid;
+use bevy::{reflect::TypeUuid, prelude::Component};
 use bevy_inspector_egui::Inspectable;
-use torus_common::units::*;
-
+use crate::maths::*;
 use crate::{Descriptor, Tags};
 
 /// A simple type that holds an item's unique identifier. This is a global asset,
@@ -17,18 +15,25 @@ pub struct Item {
 }
 
 /// Something that has a structured sub-set of items. Similar to a container, but more specific.
+#[derive(Debug, Clone, Inspectable, Default, Component)]
 pub struct ItemSystem {}
 
 /// Something that has capacity and can hold generic items.
+#[derive(Debug, Clone, Inspectable, Default, Component)]
 pub struct ItemContainer {
     pub capacity: Capacity,
+}
+
+#[derive(Debug, Clone, Inspectable, Component)]
+pub struct ItemVolume {
+    pub volume: Volume,
 }
 
 // ================================================================== //
 // ================================================================== //
 // ================================================================== //
 
-#[derive(Debug, Clone, Inspectable)]
+#[derive(Debug, Clone, Inspectable, PartialEq)]
 pub enum ItemTag {
     None,
     Weapon,
@@ -44,6 +49,16 @@ pub enum ItemTag {
 // ================================================================== //
 // ================================================================== //
 // ================================================================== //
+
+impl Item {
+    pub fn new(uid: u32, description: Descriptor) -> Self {
+        Self {
+            uid,
+            description,
+            tags: Tags::new(),
+        }
+    }
+}
 
 impl Hash for Item {
     fn hash<H: std::hash::Hasher>(&self, state: &mut H) {
@@ -61,5 +76,29 @@ impl Eq for Item {}
 impl Default for ItemTag {
     fn default() -> Self {
         ItemTag::None
+    }
+}
+
+impl ItemContainer {
+    pub fn new(capacity: u32) -> Self {
+        Self {
+            capacity: Capacity::new(capacity),
+        }
+    }
+}
+
+impl ItemVolume {
+    pub fn new(volume: u32) -> Self {
+        Self {
+            volume: Volume::new(volume),
+        }
+    }
+}
+
+impl Default for ItemVolume {
+    fn default() -> Self {
+        Self {
+            volume: Volume::new(1),
+        }
     }
 }

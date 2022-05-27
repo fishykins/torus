@@ -5,3 +5,9 @@ authors = ["Caspar Green <caspar.m.green@gmail.com>"]
 edition = "2021"
 
 [dependencies]
+bevy = { version = "0.7", default-features = false }
+bevy-inspector-egui = { version = "0.10" }
+uuid = { version = "1.0.0", features = ["v4"] }
+serde = { version = "1.0" }
+fishics = { path = "C:/Users/Fishy/Documents/Projects/Libraries/geometry/fishics" }
+prima = { path = "C:/Users/Fishy/Documents/Projects/Libraries/geometry/prima" }

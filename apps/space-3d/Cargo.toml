@@ -8,6 +8,3 @@ edition = "2021"
 [dependencies]
 bevy = { version = "0.6" }
 bevy_rapier3d = "0.12"
-
-[profile.dev.package.bevy]
-opt-level = 3

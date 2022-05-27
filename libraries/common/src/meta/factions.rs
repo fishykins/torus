@@ -1,4 +1,5 @@
 use serde::{Serialize, Deserialize};
+use crate::{Descriptor, Tags};
 
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub enum FactionType {
@@ -32,13 +33,22 @@ pub enum FactionTag {
     Weapons,
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct Faction {
     pub uid: u16,
-    pub long_name: String,
-    pub short_name: String,
-    pub abrv: String,
-    pub description: String,
+    pub descriptor: Descriptor,
     pub r#type: FactionType,
-    pub tags: Vec<FactionTag>,
+    pub tags: Tags<FactionTag>,
+}
+
+impl Default for FactionType {
+    fn default() -> Self {
+        FactionType::Corporation
+    }
+}
+
+impl Default for FactionTag {
+    fn default() -> Self {
+        FactionTag::Civilian
+    }
 }

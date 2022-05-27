@@ -1,5 +1,5 @@
 [package]
-name = "physics_test"
+name = "player_test"
 version = "0.1.0"
 edition = "2021"
 
@@ -8,6 +8,7 @@ edition = "2021"
 [dependencies]
 bevy = { version = "0.7" }
 bevy-inspector-egui = { version = "0.10" }
+leafwing-input-manager = { version = "0.3.0" }
+torus_common = { path  = "../../libraries/common" }
 fishics = { path = "C:/Users/Fishy/Documents/Projects/Libraries/geometry/fishics" }
 prima = { path = "C:/Users/Fishy/Documents/Projects/Libraries/geometry/prima" }
-torus_common = { path  = "../../libraries/common" }

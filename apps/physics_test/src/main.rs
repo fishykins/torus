@@ -2,15 +2,19 @@ use bevy::{
     log::{Level, LogSettings},
     prelude::*,
 };
-use bevy_inspector_egui::{InspectorPlugin, WorldInspectorParams, WorldInspectorPlugin};
-
+use bevy_inspector_egui::{
+    InspectorPlugin, RegisterInspectable, WorldInspectorParams, WorldInspectorPlugin,
+};
 use fishics::{bundles::*, components::*, resources::*, FishicsPlugin};
 use prima::prelude::*;
+use torus_common::{
+    items::{bundles::*, Item, ItemContainer, ItemSystem, ItemVolume},
+    Descriptor,
+};
 
 const SCALE: f32 = 20.0;
 const SCREEN_WIDTH: f32 = 800.0;
 const SCREEN_HEIGHT: f32 = 600.0;
-const WARP_OFFSET: f32 = 0.98;
 
 fn main() {
     // Debug settings
@@ -50,11 +54,70 @@ fn main() {
             ..Default::default()
         });
 
+    // Insert assets
+    app.add_asset::<Item>();
+
+    // Inspectable components
+    app.register_inspectable::<ItemContainer>();
+    app.register_inspectable::<ItemSystem>();
+    app.register_inspectable::<ItemVolume>();
+
+    // Systems
     app.add_startup_system(setup);
+    app.add_startup_system(item_test);
     app.add_system(reset_cubes);
 
     // Run the app
     app.run();
+}
+
+fn item_test(mut commands: Commands, mut items: ResMut<Assets<Item>>) {
+    let bananna = Item::new(1, Descriptor::named("Bananna", "Banan"));
+    let bag = Item::new(2, Descriptor::named("Bag", "Bag"));
+
+    let bananna_handle = items.add(bananna);
+    let bag_handle = items.add(bag);
+
+    commands
+        .spawn_bundle(ItemContainerBundle {
+            name: Name::new("Bag"),
+            item: bag_handle,
+            volume: ItemVolume::new(32),
+            container: ItemContainer::new(10),
+        })
+        .with_children(|parent| {
+            parent.spawn_bundle(ItemBundle {
+                item: bananna_handle.clone(),
+                name: Name::new("Bananna 1"),
+                volume: ItemVolume::new(2),
+            });
+            parent.spawn_bundle(ItemBundle {
+                item: bananna_handle.clone(),
+                name: Name::new("Bananna 2"),
+                volume: ItemVolume::new(2),
+            });
+        });
+}
+
+fn setup(mut commands: Commands, mut mats: ResMut<Assets<PhysicsMaterial>>) {
+    commands.spawn_bundle(OrthographicCameraBundle::new_2d());
+
+    let basic_material = mats.add(PhysicsMaterial::bouncy());
+
+    spawn_circle(
+        &mut commands,
+        Point::new(-12.0, 0.0),
+        Color::rgb(0.7, 0.5, 0.2),
+        5.0,
+        basic_material.clone(),
+    );
+    spawn_cube(
+        &mut commands,
+        Point::new(12.0, -2.0),
+        Color::rgb(0.1, 0.5, 0.7),
+        (3.0, 6.0),
+        basic_material.clone(),
+    );
 }
 
 fn reset_cubes(mut cubes: Query<(&RigidBody, &mut Velocity)>) {
@@ -85,27 +148,6 @@ fn reset_cubes(mut cubes: Query<(&RigidBody, &mut Velocity)>) {
             vel.set_linear(Vector::new(v.x, -v.y));
         }
     }
-}
-
-fn setup(mut commands: Commands, mut mats: ResMut<Assets<PhysicsMaterial>>) {
-    commands.spawn_bundle(OrthographicCameraBundle::new_2d());
-
-    let basic_material = mats.add(PhysicsMaterial::bouncy());
-
-    spawn_circle(
-        &mut commands,
-        Point::new(-12.0, 0.0),
-        Color::rgb(0.7, 0.5, 0.2),
-        5.0,
-        basic_material.clone(),
-    );
-    spawn_cube(
-        &mut commands,
-        Point::new(12.0, -2.0),
-        Color::rgb(0.1, 0.5, 0.7),
-        (3.0, 6.0),
-        basic_material.clone(),
-    );
 }
 
 fn spawn_cube(
