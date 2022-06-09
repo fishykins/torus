@@ -1,9 +1,8 @@
 use bevy::prelude::Component;
+pub mod components;
 pub mod items;
 pub mod maths;
 pub mod meta;
-pub mod player;
-pub mod physics;
 
 // ================================================================== //
 // ================================================================== //
@@ -22,7 +21,6 @@ impl Default for Uuid {
         Self::new()
     }
 }
-
 
 use bevy_inspector_egui::Inspectable;
 use serde::{Deserialize, Serialize};
