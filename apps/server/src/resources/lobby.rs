@@ -53,4 +53,8 @@ impl Lobby {
             false
         }
     }
+
+    pub fn players(&self) -> Vec<u64> {
+        self.players.keys().cloned().collect()
+    }
 }

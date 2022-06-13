@@ -8,6 +8,7 @@ edition = "2021"
 bevy = { version = "0.7", default-features = false }
 bevy-inspector-egui = { version = "0.10" }
 serde = { version = "1.0" }
+slotmap = { version = "1.0", features = ["serde"] }
 prima = { path = "C:/Users/Fishy/Documents/Projects/Libraries/geometry/prima" }
 fishics = { path = "C:/Users/Fishy/Documents/Projects/Libraries/geometry/fishics" }
 torus_common = { path  = "../common" }

@@ -1,2 +1,2 @@
-pub mod entities;
 pub mod bundles;
+pub mod resources;

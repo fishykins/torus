@@ -2,10 +2,6 @@ use std::fmt::Display;
 use bevy_inspector_egui::Inspectable;
 use serde::{Serialize, Deserialize};
 
-mod spawn;
-
-pub use spawn::*;
-
 
 #[derive(Debug, Clone, Inspectable, Serialize, Deserialize)]
 pub enum EntityType {

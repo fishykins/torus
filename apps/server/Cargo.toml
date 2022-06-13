@@ -9,6 +9,7 @@ edition = "2021"
 bevy = { version = "0.7", default-features = false }
 bevy_renet = "0.0.2"
 serde = { version = "1.0" }
+bimap = { version = "0.6.2", features = ["serde"] }
 prima = { path = "C:/Users/Fishy/Documents/Projects/Libraries/geometry/prima" }
 fishics = { path = "C:/Users/Fishy/Documents/Projects/Libraries/geometry/fishics" }
 torus_common = { path  = "../../libraries/common" }

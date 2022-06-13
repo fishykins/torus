@@ -1,24 +1,29 @@
-use std::time::Duration;
-use crate::{net::new_renet_server, resources::Lobby};
-use bevy::{prelude::*, log::{LogSettings, Level, LogPlugin}, app::{ScheduleRunnerSettings, ScheduleRunnerPlugin}, diagnostic::DiagnosticsPlugin, asset::AssetPlugin};
-use bevy_renet::RenetServerPlugin;
-use fishics::{FishicsCorePlugin, FishicsLocalityPlugin, network::LocalNet};
-use torus_core::entities::SpawnPool;
 use super::systems::*;
+use crate::{net::new_renet_server, resources::NetMap};
+use bevy::{
+    app::{ScheduleRunnerPlugin, ScheduleRunnerSettings},
+    asset::AssetPlugin,
+    diagnostic::DiagnosticsPlugin,
+    log::{Level, LogPlugin, LogSettings},
+    prelude::*,
+};
+use bevy_renet::RenetServerPlugin;
+use fishics::{network::LocalNet, FishicsCorePlugin, FishicsLocalityPlugin};
+use std::time::Duration;
+use torus_core::resources::SpawnPool;
 
 pub fn torus_app() {
     let mut app = App::new();
 
     let mut log_setting = LogSettings::default();
     log_setting.level = Level::INFO;
+    let fps = Duration::from_secs_f64(1.0 / 144.0);
 
-    app.insert_resource(ScheduleRunnerSettings::run_loop(Duration::from_secs_f64(
-        1.0 / 144.0,
-    )))
-    .insert_resource(log_setting)
-    .insert_resource(new_renet_server())
-    .insert_resource(Lobby::new())
-    .insert_resource(SpawnPool::new());
+    app.insert_resource(ScheduleRunnerSettings::run_loop(fps))
+        .insert_resource(log_setting)
+        .insert_resource(new_renet_server())
+        .insert_resource(NetMap::new())
+        .insert_resource(SpawnPool::new());
 
     app.add_plugins(MinimalPlugins)
         .add_plugin(ScheduleRunnerPlugin::default())
@@ -29,11 +34,10 @@ pub fn torus_app() {
         .add_plugin(FishicsCorePlugin::headless())
         .add_plugin(FishicsLocalityPlugin::<LocalNet>::new(true, false, false));
 
-    app.add_system(connections_handler)
+    app.add_system(lobby_manager)
         .add_system(net_event_handler)
         .add_system(physics_broadcast_system)
         .add_system(request_handler);
-
 
     app.run();
 }
